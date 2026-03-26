@@ -99,8 +99,7 @@ No es obligatorio tener Maven instalado globalmente, ya que el proyecto incluye 
 ----------------------------
 Tenemos **dos opciones** para ejecutar la misma automatización. Use **solo una** (dan el mismo resultado). Abajo van los pasos en orden:
 
---- Opción 1: usar el archivo run.cmd: run.cmd es un archivo que ya viene en esa carpeta. Hace falta **solo** abrirlo (doble clic) o
-  escribir su nombre en la consola, como se indica.
+--- Opción 1: usar el archivo run.cmd (Opcion mas facil): run.cmd es un archivo que ya viene en esa carpeta. Hace falta **solo** abrirlo (doble clic)
 
   **Pasos si quiere usar doble clic (no hace falta abrir CMD):**
 
