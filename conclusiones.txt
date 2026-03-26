@@ -1,0 +1,66 @@
+CONCLUSIONES Y HALLAZGOS - EJERCICIO 1 (PRUEBA E2E DEMOBLAZE)
+=============================================================
+
+1. Resumen
+--------------------
+Se implementó una automatización funcional E2E sobre Demoblaze utilizando Serenity BDD con Screenplay, cumpliendo el flujo solicitado por el ejercicio:
+- Agregar dos productos al carrito; Visualizar y validar el carrito; Completar formulario de compra; Finalizar compra con validación de confirmación.
+- Además, se incorporó especificación ejecutable con Gherkin/Cucumber y parametrización de datos de prueba.
+
+2. Cobertura funcional validada
+-------------------------------
+El caso automatizado cubre de forma completa el proceso de compra:
+1) Navegación a home.
+2) Agregado de dos productos del catálogo.
+3) Gestión de alertas de confirmación por cada agregado al carrito.
+4) Navegación al carrito y comprobación de presencia de ambos productos.
+5) Llenado del formulario (modal Place Order).
+6) Confirmación de compra con verificación del mensaje de éxito.
+
+3. Datos de prueba ejecutados
+-----------------------------
+- Name: Andy Briones
+- Country: Ecuador
+- City: Guayaquil
+- Credit card: 5399831666475023
+- Month: 07
+- Year: 2031
+
+4. **Hallazgos técnicos identificados**
+-----------------------------------
+Durante el análisis del comportamiento de Demoblaze se observaron los siguientes aspectos:
+- El sitio usa alertas JavaScript nativas al agregar productos al carrito; sin manejo explícito del alert la ejecución falla.
+- Existe variabilidad en tiempos de respuesta y renderizado de elementos.
+- La actualización visual del carrito puede no ser inmediata tras la navegación.
+- En ciertos momentos, componentes visuales pueden superponerse sobre elementos de navegación.
+
+5. Decisiones de implementación adoptadas
+-----------------------------------------
+Para estabilizar la automatización y reducir fallos intermitentes se implementó:
+- Esperas explícitas sobre elementos críticos de cada paso.
+- Interacción dedicada para aceptar alertas del navegador.
+- Validaciones explícitas de estado antes de continuar con el flujo.
+- Uso de click por JavaScript en puntos sensibles de interacción.
+- Gherkin ejecutable (`.feature`) conectado a Step Definitions para enfoque BDD.
+- Datos de prueba externalizados en `test-data.properties` y consumidos por `PurchaseTestData`.
+
+6. Evidencias de cumplimiento del ejercicio
+-------------------------------------------
+Se entregan los insumos solicitados:
+- Código fuente de automatización.
+- Scripts de ejecución (`run.ps1` / `run.cmd`).
+- Reportes Serenity:
+  - Reporte generado por build: `target/site/serenity`
+  - Reporte exportado para repositorio: `reports/serenity`
+- Documentación:
+  - `readme.txt` con instrucciones detalladas de ejecución.
+  - `conclusiones.txt` con hallazgos y cierre técnico.
+
+7. **Conclusiones finales**
+-----------------------
+- El objetivo del ejercicio fue cumplido de forma integral y trazable.
+- Serenity BDD con Screenplay resultó adecuado para estructurar una prueba mantenible y legible.
+- La incorporación de Gherkin mejora la trazabilidad funcional y alinea la solución con prácticas BDD.
+- La parametrización de datos reduce hardcodeo y facilita mantenimiento sin alterar el escenario solicitado.
+- La solución quedó preparada para evaluación técnica y reproducción por terceros sin dependencias manuales adicionales.
+- La exportación del reporte a `reports/serenity` garantiza que la evidencia de ejecución quede disponible en el repositorio público.

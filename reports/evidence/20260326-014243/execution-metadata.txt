@@ -1,0 +1,6 @@
+﻿Execution Timestamp: 20260326-014243
+Machine           : PC
+User              : andii
+Java Version      : openjdk version "25.0.2" 2026-01-20 LTS
+Project           : demoblaze-serenity-e2e
+Scenario          : Flujo E2E de compra en Demoblaze
