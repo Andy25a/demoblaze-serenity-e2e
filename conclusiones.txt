@@ -7,17 +7,7 @@ Se implementó una automatización funcional E2E sobre Demoblaze utilizando Sere
 - Agregar dos productos al carrito; Visualizar y validar el carrito; Completar formulario de compra; Finalizar compra con validación de confirmación.
 - Además, se incorporó especificación ejecutable con Gherkin/Cucumber y parametrización de datos de prueba.
 
-2. Cobertura funcional validada
--------------------------------
-El caso automatizado cubre de forma completa el proceso de compra:
-1) Navegación a home.
-2) Agregado de dos productos del catálogo.
-3) Gestión de alertas de confirmación por cada agregado al carrito.
-4) Navegación al carrito y comprobación de presencia de ambos productos.
-5) Llenado del formulario (modal Place Order).
-6) Confirmación de compra con verificación del mensaje de éxito.
-
-3. Datos de prueba ejecutados
+2. Datos de prueba ejecutados
 -----------------------------
 - Name: Andy Briones
 - Country: Ecuador
@@ -26,7 +16,7 @@ El caso automatizado cubre de forma completa el proceso de compra:
 - Month: 07
 - Year: 2031
 
-4. **Hallazgos técnicos identificados**
+3. **Hallazgos técnicos identificados**
 -----------------------------------
 Durante el análisis del comportamiento de Demoblaze se observaron los siguientes aspectos:
 - El sitio usa alertas JavaScript nativas al agregar productos al carrito; sin manejo explícito del alert la ejecución falla.
@@ -34,7 +24,7 @@ Durante el análisis del comportamiento de Demoblaze se observaron los siguiente
 - La actualización visual del carrito puede no ser inmediata tras la navegación.
 - En ciertos momentos, componentes visuales pueden superponerse sobre elementos de navegación.
 
-5. Decisiones de implementación adoptadas
+4. Decisiones de implementación adoptadas
 -----------------------------------------
 Para estabilizar la automatización y reducir fallos intermitentes se implementó:
 - Esperas explícitas sobre elementos críticos de cada paso.
@@ -44,7 +34,7 @@ Para estabilizar la automatización y reducir fallos intermitentes se implement�
 - Gherkin ejecutable (`.feature`) conectado a Step Definitions para enfoque BDD.
 - Datos de prueba externalizados en `test-data.properties` y consumidos por `PurchaseTestData`.
 
-6. Evidencias de cumplimiento del ejercicio
+5. Evidencias de cumplimiento del ejercicio
 -------------------------------------------
 Se entregan los insumos solicitados:
 - Código fuente de automatización.
@@ -56,7 +46,7 @@ Se entregan los insumos solicitados:
   - `readme.txt` con instrucciones detalladas de ejecución.
   - `conclusiones.txt` con hallazgos y cierre técnico.
 
-7. **Conclusiones finales**
+6. **Conclusiones finales**
 -----------------------
 - El objetivo del ejercicio fue cumplido de forma integral y trazable.
 - Serenity BDD con Screenplay resultó adecuado para estructurar una prueba mantenible y legible.
